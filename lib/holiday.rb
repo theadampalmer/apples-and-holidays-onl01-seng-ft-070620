@@ -40,15 +40,16 @@ def all_winter_holiday_supplies(holiday_hash)
 end
 
 def all_supplies_in_holidays(holiday_hash)
- all_supplies = []
+  # return an array of all of the supplies that are used in the winter season
+  all_items = []
   holiday_hash[:winter].collect do |supply|
    supply.each do |items|
       if holiday_hash[:winter][items] != nil 
-        all_supplies.concat(holiday_hash[:winter][items])
+        all_items.concat(holiday_hash[:winter][items])
       end
    end
   end
-  all_supplies
+  all_items
 end
 
 def all_holidays_with_bbq(holiday_hash)
